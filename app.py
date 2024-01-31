@@ -15,8 +15,7 @@ st.title("Interview Chat")
 st.session_state.messages = helpers.load_messages()
 for message in st.session_state.messages:
     if message["role"]=="system":
-        with st.chat_message("system", avatar="🔮"):
-            st.markdown(message["content"])
+        continue
     else:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
